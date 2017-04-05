@@ -5,6 +5,10 @@ import TextField from '../components/input-text'
 import BasicButton from '../components/basic-button'
 
 
+const updateFamilyId = (children, id) => {
+  return children.familyId = id
+}
+
 const postChildren = (children, id) => fetch('http://localhost:5000/children', {
   headers: {
     'Content-Type': 'application/json'
@@ -84,8 +88,9 @@ const mapActionsToProps = (dispatch) => ({
   onChangeNotes: (e) => dispatch({type: 'SET_CHILD_NOTES', payload: e.target.value}),
   submit: (history, children, family) => (e) => {
     e.preventDefault()
-    postChildren(children, family.id).then(res => res.json()).then(res => {
-      {dispatch({type: 'CLEAR_CHILDREN'})}
+    updateFamilyId(children, family.familyId)
+    postChildren(children).then(res => res.json()).then(res => {
+      dispatch({type: 'CLEAR_CHILDREN'})
       history.push('/family')
     }).catch(err => console.log(err.message))
   }

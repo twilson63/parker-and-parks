@@ -1,11 +1,15 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import BasicButton from '../components/basic-button'
+import {map, filter, compose} from 'ramda'
 
 
 class Child extends Component {
 
+
+
   render() {
+    const props = this.props
+
     return(
       <div className='ma2'>
         <ul className="list pl0 mt0 measure center">
@@ -17,7 +21,7 @@ class Child extends Component {
         </div>
         </li>
         </ul>
-        <div class="dtc v-mid pl3">
+        <div className="dtc v-mid pl3">
       <h4>Welcome to your very own Parker home page!</h4>
       </div>
 
@@ -36,15 +40,19 @@ class Child extends Component {
       <div className='' >
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
           onClick={e => this.props.history.push('/hampton-park')}  href="#0">Hampton Park</a>
-        <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green" href="#0">Colonial Lake</a>
-        <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green" href="#0">Lilly's Page</a>
+        <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
+          onClick={e => this.props.history.push('/colonial-lake')} href="#0">Colonial Lake</a>
+        <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
+          onClick={e => this.props.history.push('/child')} href="#0">Lilly's Page</a>
       </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state => state)
+const mapStateToProps = (state) => {
+  children: state.children
+}
 const mapActionsToProps = (dispatch) => {
 
 }

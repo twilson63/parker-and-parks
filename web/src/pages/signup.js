@@ -7,18 +7,19 @@ import BasicButton from '../components/basic-button'
 
 const getFamily = (id) => fetch('http://localhost:5000/family' + id)
 
-const postFamily = (family) => {
-  family.familyId = family.parentFirst + family.parentLast +
+const updateFamilyId = (family) => {
+  return family.familyId = family.parentFirst + family.parentLast +
     family.eMail + family.cellPhone
+}
 
-  fetch('http://localhost:5000/family', {
+const postFamily = (family) => fetch('http://localhost:5000/family', {
     headers: {
       'Content-Type': 'application/json'
     },
     method: 'POST',
     body: JSON.stringify(family)
   })
-}
+
 
 const putFamily = (family) => fetch('http://localhost:5000/family' + family.id, {
   headers: {
@@ -133,13 +134,9 @@ const mapActionsToProps = (dispatch) => ({
           history.push('/family' + family.id)
         })
     } else {
-      postFamily(family)
-      console.log(family)
-      .then(family => family.json())
-      console.log('res is ', family)
-      .then(res => {dispatch({type: 'CLEAR_FAMILY'})
-                    history.push('/children')
-                    }).catch(err => console.log(err.message))
+      updateFamilyId(family)
+      postFamily(family).then(res => res.json())
+        history.push('/children')
     }
   }
 })

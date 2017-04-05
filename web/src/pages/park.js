@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-
+import Activity from '../components/activity'
 
 class Park extends Component {
   render() {
@@ -15,9 +15,15 @@ class Park extends Component {
               src='/parker-bear-orginal-painting.jpg' alt='Parker Bear on swing'></img>
               <div className="pl3 flex-auto">
               <span className="f4 db black-70">Welcome to Hampton Park!</span>
+              <small>Let's start the Scavenger Hunt!</small>
             </div>
             </li>
             </ul>
+          </div>
+          <div>
+            <Activity onClick={e => this.props.history.push('/activitydetail')} />
+            <Activity />
+            <Activity />
           </div>
       </div>
     )

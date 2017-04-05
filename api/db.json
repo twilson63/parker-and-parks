@@ -11,6 +11,7 @@
       "city": "James Island",
       "state": "SC",
       "zip": "29403",
+      "password": "three",
       "id": 1
     },
     {
@@ -24,21 +25,8 @@
       "city": "Grur",
       "state": "SC",
       "zip": "29403",
+      "password": "russell",
       "id": 2
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "parentFirst": "Jen",
-      "parentLast": "Kloska",
-      "eMail": "kloska@lowes.com",
-      "cellPhone": "555-555-5555",
-      "streetAddress": "555 Charlotte Ave",
-      "streetAddress2": "",
-      "city": "Charlotte",
-      "state": "N",
-      "zip": "55555",
-      "password": "",
-      "id": 3
     },
     {
       "familyId": "JenKloskakloska@lowes.com555-555-5555",
@@ -49,10 +37,10 @@
       "streetAddress": "5555 Main Street",
       "streetAddress2": "",
       "city": "Charlotte",
-      "state": "N",
+      "state": "NC",
       "zip": "55555",
-      "password": "",
-      "id": 4
+      "password": "kloska",
+      "id": 3
     }
   ],
   "children": [
@@ -99,22 +87,6 @@
       "childsSex": "F",
       "childNotes": "She's a dancing fool",
       "id": 5
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "childName": "Little Kloska2",
-      "childAge": "3",
-      "childsSex": "F",
-      "childNotes": "This one is fearless",
-      "id": 6
-    },
-    {
-      "familyId": "",
-      "childName": "",
-      "childAge": "",
-      "childsSex": "",
-      "childNotes": "",
-      "id": 7
     }
   ],
   "parks": [

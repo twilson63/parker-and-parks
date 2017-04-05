@@ -57,13 +57,15 @@ const family = (state=initialFamily, action) => {
   }
 }
 
-const initialChildren = {
+const initialChildren =
+  {
   familyId: '',
   childName: '',
   childAge: '',
   childsSex: '',
-  childNotes: ''
+  childNotes: '',
 }
+
 
 const children = (state=initialChildren, action) => {
   switch (action.type) {
