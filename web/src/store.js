@@ -15,16 +15,6 @@ const initialFamily = {
   password: ''
 }
 
-const login = (state={}, action) => {
-  switch (action.type) {
-    case 'VALIDATE_EMAIL':
-      return state
-    case 'VALIDATE_PASSWORD':
-      return state
-    default:
-      return state
-  }
-}
 
 const family = (state=initialFamily, action) => {
   switch (action.type) {
@@ -57,17 +47,7 @@ const family = (state=initialFamily, action) => {
   }
 }
 
-const initialChildren =
-  {
-  familyId: '',
-  childName: '',
-  childAge: '',
-  childsSex: '',
-  childNotes: '',
-}
-
-
-const children = (state=initialChildren, action) => {
+const children = (state=[], action) => {
   switch (action.type) {
     case 'SET_CHILD':
       return action.payload
@@ -82,7 +62,7 @@ const children = (state=initialChildren, action) => {
     case 'SET_CHILD_NOTES':
       return set(lensProp('childNotes'), action.payload, state)
     case 'CLEAR_CHILDREN':
-      return {}
+      return []
     default:
       return state
   }

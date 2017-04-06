@@ -4,13 +4,20 @@ import {map} from 'ramda'
 import BasicButton from '../components/basic-button'
 
 
-const getFamily = (id) => fetch('http://localhost:5000/family' + id)
 
 class Family extends Component {
-
+  componentDidMount () {
+      fetch('http://localhost:5000/children/')
+        .then(res => res.json())
+        .then(children => this.props.dispatch({type: 'SET_CHILD',
+          payload: children
+        }))
+  }
 
   render() {
+    const props = this.props
     const li = (child) => {
+      if (child.familyId === props.family.familyId) {
       return (
         <li key={child.id}>
           <BasicButton
@@ -19,8 +26,8 @@ class Family extends Component {
         </li>
       )
     }
+  }
 
-    const props = this.props
     return(
       <div className='ma2'>
       <h4>Hi {props.family.parentLast} family!</h4>
@@ -40,9 +47,8 @@ const mapStateToProps = (state) => ({
   family: state.family,
   children: state.children
 })
-const mapActionsToProps = (dispatch) => {
-  set: (family) => dispatch({type: 'SET_FAMILY', payload: family})
-}
+
+
 const connector = connect(mapStateToProps)
 
 export default connector(Family)

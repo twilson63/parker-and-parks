@@ -81,12 +81,20 @@
       "id": 4
     },
     {
+      "childName": "LittleKloska2",
+      "childAge": "3",
+      "childsSex": "F",
+      "childNotes": "This one is fearless",
       "familyId": "JenKloskakloska@lowes.com555-555-5555",
+      "id": 6
+    },
+    {
       "childName": "Lucy",
-      "childAge": "5",
+      "childAge": "6",
       "childsSex": "F",
       "childNotes": "She's a dancing fool",
-      "id": 5
+      "familyId": "JenKloskakloska@lowes.com555-555-5555",
+      "id": 7
     }
   ],
   "parks": [
@@ -132,21 +140,30 @@
       "type": "fitness"
     },
     {
-      "denmarkVesey": "Denmark Vesey",
-      "image": "statue.img",
+      "raceTrack": "Horse racing track",
+      "pointValue": 10,
+      "history": "In 1835, the South Carolina Jockey Club bought part of the Gibbes Plantation for use as a horse racing course.  The running track that exists today is in almost exactly the same place as the old racing course.",
+      "type": "learning"
+    },
+    {
+      "denmarkVeseyStatue": "Denmark Vesey",
+      "image": "/denmark-vesey-statue.jpg",
       "location": "Hampton Park",
       "story": "",
       "pointValue": 20,
       "type": "learning"
     },
     {
-      "runTrack": "Run around the track",
-      "pointValue": 20,
-      "type": "fitness"
+      "denmarkVeseyImage": "Denmark Vesey",
+      "image": "/denmark-vesey.jpg",
+      "location": "Hampton Park",
+      "story": "",
+      "pointValue": null,
+      "type": "learning"
     },
     {
       "bandstand": "Band Stand",
-      "image": "bandstand.img",
+      "image": "/hampton-park-bandstand.jpg",
       "location": "Hampton Park",
       "story": "",
       "pointValue": 10,

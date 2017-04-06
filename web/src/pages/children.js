@@ -25,7 +25,6 @@ class Children extends Component {
       getChildren(this.props.match.params.id)
         .then(res => res.json())
         .then(children => this.props.set(children))
-
     }
   }
 
@@ -65,13 +64,13 @@ class Children extends Component {
           onChange={props.onChangeNotes}
           optional={false}
         />
-        <BasicButton >Done!</BasicButton>
-        <BasicButton >Enter another child</BasicButton>
+        <BasicButton>Done!</BasicButton>
+        <BasicButton onClick={e => props.submitAgain(props.history, props.children, props.family)} >
+          Enter another child</BasicButton>
         <a className='link f6' href='#'
            onClick={e => props.history.goBack()}>Cancel</a>
-      </form>
+       </form>
       </div>
-
     )
   }
 }
@@ -81,11 +80,19 @@ const mapStateToProps = (state) => ({
   children: state.children
 })
 const mapActionsToProps = (dispatch) => ({
-  set: (children) => dispatch({type: 'SET_CHILD', payload: children}),
+  set: (children, family) => dispatch({type: 'SET_CHILD', payload: children}),
   onChangeName: (e) => dispatch({type: 'SET_CHILD_NAME', payload: e.target.value}),
   onChangeAge: (e) => dispatch({type: 'SET_CHILD_AGE', payload: e.target.value}),
   onChangeSex: (e) => dispatch({type: 'SET_CHILD_SEX', payload: e.target.value}),
   onChangeNotes: (e) => dispatch({type: 'SET_CHILD_NOTES', payload: e.target.value}),
+  submitAgain: (history, children, family) => (e) => {
+    e.preventDefault()
+    updateFamilyId(children, family.familyId)
+    postChildren(children).then(res => res.json()).then( res => {
+      dispatch({type: 'CLEAR_CHILDREN'})
+      history.push('/children')
+    }).catch(err => console.log(err.message))
+  },
   submit: (history, children, family) => (e) => {
     e.preventDefault()
     updateFamilyId(children, family.familyId)

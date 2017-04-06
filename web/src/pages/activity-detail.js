@@ -17,6 +17,12 @@ const ActivityDetail = (props) => {
           </div>
           </li>
           </ul>
+          <div>
+            <img className='ba b--black-10 db w4 h4 w3-ns h3-ns'
+              src='/hampton-park-bandstand.jpg' alt='hampton park bandstand' />
+              <img className='ba b--black-10 db w4 h4 w3-ns h3-ns'
+                src='/denmark-vesey-statue.jpg' alt='denmark vesey statue' />
+          </div>
         </div>
     </div>
   )

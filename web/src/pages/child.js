@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {map, filter, compose} from 'ramda'
 
 
 class Child extends Component {

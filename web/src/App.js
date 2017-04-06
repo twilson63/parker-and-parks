@@ -26,7 +26,7 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/children' component={Children} />
             <Route path='/family' component={Family} />
-            <Route path='/child/:id' component={Child} />
+            <Route path='/child/:familyId' component={Child} />
             <Route path='/park' component={Park} />
             <Route path='/activitydetail' component={ActivityDetail} />
           </main>
