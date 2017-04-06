@@ -49,7 +49,7 @@ const family = (state=initialFamily, action) => {
 
 const children = (state=[], action) => {
   switch (action.type) {
-    case 'SET_CHILD':
+    case 'SET_CHILDREN':
       return action.payload
     case 'SET_FAMILY_ID':
       return set(lensProp('familyId'), action.payload, state)
@@ -63,6 +63,15 @@ const children = (state=[], action) => {
       return set(lensProp('childNotes'), action.payload, state)
     case 'CLEAR_CHILDREN':
       return []
+    default:
+      return state
+  }
+}
+
+const child = (state=[], action) => {
+  switch (action.type) {
+    case 'SET_CHILD':
+      return action.payload
     default:
       return state
   }
@@ -86,6 +95,7 @@ const store = createStore(
   combineReducers({
     family,
     children,
+    child,
     park
   })
 )

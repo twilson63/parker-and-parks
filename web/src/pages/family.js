@@ -9,7 +9,7 @@ class Family extends Component {
   componentDidMount () {
       fetch('http://localhost:5000/children/')
         .then(res => res.json())
-        .then(children => this.props.dispatch({type: 'SET_CHILD',
+        .then(children => this.props.dispatch({type: 'SET_CHILDREN',
           payload: children
         }))
   }

@@ -24,8 +24,7 @@ class Children extends Component {
     if (this.props.match.params.id) {
       getChildren(this.props.match.params.id)
         .then(res => res.json())
-        .then(children => this.props.set(children))
-    }
+        .then(children => this.props.set(children))}
   }
 
   render() {
@@ -80,7 +79,7 @@ const mapStateToProps = (state) => ({
   children: state.children
 })
 const mapActionsToProps = (dispatch) => ({
-  set: (children, family) => dispatch({type: 'SET_CHILD', payload: children}),
+  set: (children, family) => dispatch({type: 'SET_CHILDREN', payload: children}),
   onChangeName: (e) => dispatch({type: 'SET_CHILD_NAME', payload: e.target.value}),
   onChangeAge: (e) => dispatch({type: 'SET_CHILD_AGE', payload: e.target.value}),
   onChangeSex: (e) => dispatch({type: 'SET_CHILD_SEX', payload: e.target.value}),
