@@ -21,7 +21,7 @@ class Family extends Component {
       return (
         <li key={child.id}>
           <BasicButton
-            onClick={e => this.props.history.push('/child/' + child.id)}>
+            onClick={e => this.props.history.push('/children/' + child.id)}>
             {child.childName}</BasicButton>
         </li>
       )

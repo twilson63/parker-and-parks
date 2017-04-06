@@ -2,12 +2,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 
+const getChild = (id) => fetch('http://localhost:5000/children/' + id)
+
 class Child extends Component {
   componentDidMount() {
-    fetch('http://localhost:5000/children/' + this.props.match.params.familyId)
+    getChild(this.props.match.params.id)
       .then(res => res.json())
-      .then(child => this.props.dispatch({type: 'SET_CHILD',
-      payload: child}))
+      .then(child => this.props.set(child))
   }
 
   render() {
@@ -46,20 +47,20 @@ class Child extends Component {
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
           onClick={e => this.props.history.push('/colonial-lake')} href="#0">Colonial Lake</a>
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
-          onClick={e => this.props.history.push('/child')} href="#0">Lilly's Page</a>
+          onClick={e => this.props.history.push('/children/')} href="#0">Lilly's Page</a>
       </div>
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  children: state.children
+const mapStateToProps = (state) => ({
+  children: state.children,
   child: state.child
-}
-const mapActionsToProps = (dispatch) => {
+})
+const mapActionsToProps = (dispatch) => ({
   set: (child) => dispatch({type: 'SET_CHILD', payload: child})
-}
+})
 const connector = connect(mapStateToProps, mapActionsToProps)
 
 export default connector(Child)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css'
 import LandingPage from './pages/landing'
 import Signup from './pages/signup'
@@ -26,9 +26,12 @@ class App extends Component {
             <Route path='/login' component={Login} />
             <Route path='/children' component={Children} />
             <Route path='/family' component={Family} />
-            <Route path='/child/:familyId' component={Child} />
+
             <Route path='/park' component={Park} />
             <Route path='/activitydetail' component={ActivityDetail} />
+            <Switch>
+              <Route path='/children/:id' component={Child} />
+            </Switch>
           </main>
 
         </div>
