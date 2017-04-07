@@ -1,7 +1,9 @@
 # Open Items and Parking Lot 
 
+#### Database
+  - Children is sometimes being duplicated in an array in the Children object...not sure why yet.
+
 #### Home page
-  - '/' is giving me trouble so i'm using '/cpc' for now.
   
 #### Signup page
   - Allows blank family, need to stop that ability.
@@ -12,10 +14,11 @@
 #### Children page - 'Enter another Child' button is not yet working.  Think CSS related.
 
 #### Child page
-  - data entry screen is still showing up.  Think CSS related.
   - Sibling buttons need to show however many siblings there are.
   - Siblings need to be wired up to go to their page.  
 
+#### Parks
+  - Need stories and images for both parks.
 
 
 #### Nice to Have
