@@ -82,13 +82,14 @@ const initialPark = {
   activity: []
 }
 
-const park = (state=initialPark, action) => {
+const parks = (state=initialPark, action) => {
   switch (action.type) {
+    case 'SET_PARKS':
+      return action.payload
     default:
       return state
   }
 }
-
 
 
 const store = createStore(
@@ -96,7 +97,7 @@ const store = createStore(
     family,
     children,
     child,
-    park
+    parks
   })
 )
 

@@ -1,12 +1,31 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {map} from 'ramda'
 import Activity from '../components/activity'
 
+const getPark = (id) => fetch('http://localhost:5000/parks/' + id)
+
 class Park extends Component {
+  componentDidMount() {
+    getPark(this.props.match.params.id)
+    .then(res => res.json())
+    .then(park => this.props.set(park))
+  }
+
   render() {
+    const props = this.props
+    const li = (activity) => {
+      return ( <li key={activity.id}>
+                <Activity
+                  label={activity.name}
+                  value={activity.pointValue}
+                  image={activity.image}
+                  onClick={e => this.props.history.push('/activitydetail/' + activity.id)} />
+              </li>  )}
+
     return(
       <div>
-        <h3 className='tc'>Hampton Park Scavenger Hunt</h3>
+        <h3 className='tc'>{props.parks.parkName} Scavenger Hunt</h3>
         <hr />
           <div className='ma2'>
             <ul className="list pl0 mt0 measure center">
@@ -14,16 +33,17 @@ class Park extends Component {
           <img  className='ba b--black-10 db w3 w3-ns h3 h3-ns'
               src='/parker-bear-orginal-painting.jpg' alt='Parker Bear on swing'></img>
               <div className="pl3 flex-auto">
-              <span className="f4 db black-70">Welcome to Hampton Park!</span>
+              <span className="f4 db black-70">Welcome to {props.parks.parkName}, {props.child.childName}!</span>
               <small>Let's start the Scavenger Hunt!</small>
             </div>
             </li>
             </ul>
           </div>
+
           <div>
-            <Activity onClick={e => this.props.history.push('/activitydetail')} />
-            <Activity />
-            <Activity />
+            <ul>
+              {map(li, props.parks.activity)}
+            </ul>
           </div>
       </div>
     )
@@ -31,10 +51,11 @@ class Park extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  children: state.children
+  child: state.child,
+  parks: state.parks
 })
 const mapActionsToProps = (dispatch) => ({
-
+  set: (park) => dispatch({type: 'SET_PARKS', payload: park})
 })
 const connector = connect(mapStateToProps, mapActionsToProps)
 

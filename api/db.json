@@ -1,20 +1,6 @@
 {
   "family": [
     {
-      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
-      "parentFirst": "Elizabeth",
-      "parentLast": "Wagener",
-      "eMail": "mom@gmail.com",
-      "cellPhone": "843-123-4567",
-      "streetAddress": "121 Soccer Field Road",
-      "streetAddress2": "",
-      "city": "James Island",
-      "state": "SC",
-      "zip": "29403",
-      "password": "three",
-      "id": 1
-    },
-    {
       "familyId": "RussellGiebnerrussell@gmail.com123-456-5555",
       "parentFirst": "Russell",
       "parentLast": "Giebner",
@@ -26,6 +12,20 @@
       "state": "SC",
       "zip": "29403",
       "password": "russell",
+      "id": 1
+    },
+    {
+      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
+      "parentFirst": "Elizabeth",
+      "parentLast": "Wagener",
+      "eMail": "mom@gmail.com",
+      "cellPhone": "843-123-4567",
+      "streetAddress": "211 Main st",
+      "streetAddress2": "",
+      "city": "James Island",
+      "state": "SC",
+      "zip": "29403",
+      "password": "threeKids",
       "id": 2
     },
     {
@@ -46,11 +46,11 @@
   "children": [
     {
       "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
-      "childName": "Jacob",
-      "childAge": "5",
+      "childName": "Nathan",
+      "childAge": "1",
       "childsSex": "M",
       "points": null,
-      "childNotes": "He's a really cool kid",
+      "childNotes": "He's a happy kid",
       "id": 1
     },
     {
@@ -89,12 +89,28 @@
       "id": 5
     },
     {
+      "childName": "Jacob",
+      "childAge": "5",
+      "childsSex": "M",
+      "childNotes": "He's a really cool kid",
+      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
+      "id": 6
+    },
+    {
+      "childName": "Joey",
+      "childAge": "34",
+      "childsSex": "M",
+      "childNotes": "He's a cool guy",
+      "familyId": "JenKloskakloska@lowes.com555-555-5555",
+      "id": 7
+    },
+    {
       "childName": "Lucy",
       "childAge": "5",
       "childsSex": "F",
       "childNotes": "She's a dancing fool",
       "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "id": 6
+      "id": 8
     }
   ],
   "parks": [
@@ -102,12 +118,68 @@
       "parkName": "Hampton Park",
       "parkLat": "5",
       "parkLong": "M",
+      "activity": [
+        {
+          "name": "Run around the track",
+          "image": "track.jpg",
+          "location": "Hampton Park",
+          "story": "This is a ONE MILE track!  Let's go run!",
+          "pointValue": 20,
+          "type": "fitness",
+          "id": 1
+        },
+        {
+          "name": "Horse racing track",
+          "pointValue": 10,
+          "history": "In 1835, the South Carolina Jockey Club bought part of the Gibbes Plantation for use as a horse racing course.  The running track that exists today is in almost exactly the same place as the old racing course.",
+          "type": "learning",
+          "id": 2
+        },
+        {
+          "name": "Denmark Vesey Statue",
+          "image": "/denmark-vesey-statue.jpg",
+          "location": "Hampton Park",
+          "story": "",
+          "pointValue": 20,
+          "type": "learning",
+          "id": 3
+        },
+        {
+          "name": "Band Stand",
+          "image": "/hampton-park-bandstand.jpg",
+          "location": "Hampton Park",
+          "story": "",
+          "pointValue": 10,
+          "type": "learning",
+          "id": 4
+        }
+      ],
       "id": 1
     },
     {
       "parkName": "Colonial Lake",
       "parkLat": "5",
       "parkLong": "M",
+      "activity": [
+        {
+          "name": "Lake",
+          "image": "lake.img",
+          "location": "Colonial Lake",
+          "story": "",
+          "pointValue": 10,
+          "type": "learning",
+          "id": 1
+        },
+        {
+          "name": "Trees",
+          "image": "trees.img",
+          "location": "Colonial Lake",
+          "story": "",
+          "pointValue": 10,
+          "type": "learning",
+          "id": 2
+        }
+      ],
       "id": 2
     }
   ],
@@ -135,52 +207,11 @@
   ],
   "activity": [
     {
-      "runTrack": "Run around the track",
-      "pointValue": 20,
-      "type": "fitness"
-    },
-    {
-      "raceTrack": "Horse racing track",
-      "pointValue": 10,
-      "history": "In 1835, the South Carolina Jockey Club bought part of the Gibbes Plantation for use as a horse racing course.  The running track that exists today is in almost exactly the same place as the old racing course.",
-      "type": "learning"
-    },
-    {
-      "denmarkVeseyStatue": "Denmark Vesey",
-      "image": "/denmark-vesey-statue.jpg",
-      "location": "Hampton Park",
-      "story": "",
-      "pointValue": 20,
-      "type": "learning"
-    },
-    {
       "denmarkVeseyImage": "Denmark Vesey",
       "image": "/denmark-vesey.jpg",
       "location": "Hampton Park",
       "story": "",
       "pointValue": null,
-      "type": "learning"
-    },
-    {
-      "bandstand": "Band Stand",
-      "image": "/hampton-park-bandstand.jpg",
-      "location": "Hampton Park",
-      "story": "",
-      "pointValue": 10,
-      "type": "learning"
-    },
-    {
-      "lake": "Lake",
-      "image": "lake.img",
-      "location": "Colonial Lake",
-      "story": "",
-      "type": "learning"
-    },
-    {
-      "trees": "Trees",
-      "image": "trees.img",
-      "location": "Colonial Lake",
-      "story": "",
       "type": "learning"
     }
   ]

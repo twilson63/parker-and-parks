@@ -31,7 +31,7 @@ class Child extends Component {
 
 
       <hr />
-        <h3>{props.child.childName}s Hampton Park activities:</h3>
+        <h3>{props.child.childName}s Park activities:</h3>
         <div className='pl2'>
         <h4>Activities:</h4>
         <h4>Badges:</h4>
@@ -43,9 +43,9 @@ class Child extends Component {
       </div>
       <div className='' >
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
-          onClick={e => this.props.history.push('/hampton-park')}  href="#0">Hampton Park</a>
+          onClick={e => this.props.history.push('/parks/1')} >Hampton Park</a>
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
-          onClick={e => this.props.history.push('/colonial-lake')} href="#0">Colonial Lake</a>
+          onClick={e => this.props.history.push('/parks/2')} href="#0">Colonial Lake</a>
         <a className="f6 grow no-underline br-pill ph3 pv2 mb2 dib white bg-green"
           onClick={e => this.props.history.push('/children/')} href="#0">Lilly's Page</a>
       </div>

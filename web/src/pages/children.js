@@ -39,27 +39,27 @@ class Children extends Component {
       <form onSubmit={props.submit(props.history, props.children, props.family)}>
         <TextField
           label='Name'
-          value={pathOr('', ['children', 'childName'],props)}
+          value={pathOr('', ['children', 'childName'], props)}
           onChange={props.onChangeName}
           optional={false}
         />
         <TextField
           label='Age'
-          value={pathOr('', ['children', 'childAge'],props)}
+          value={pathOr('', ['children', 'childAge'], props)}
           onChange={props.onChangeAge}
           optional={false}
           width='20'
         />
         <TextField
           label='Sex'
-          value={pathOr('', ['children', 'childsSex'],props)}
+          value={pathOr('', ['children', 'childsSex'], props)}
           onChange={props.onChangeSex}
           optional={false}
           width='20'
         />
         <TextField
           label='Notes'
-          value={pathOr('', ['children', 'childNotes'],props)}
+          value={pathOr('', ['children', 'childNotes'], props)}
           onChange={props.onChangeNotes}
           optional={false}
         />

@@ -21,16 +21,16 @@ class App extends Component {
               Parker and Parks</h1>
           </header>
           <main>
-            <Route expact path='/cpc' component={LandingPage} />
+            <Route exact path='/' component={LandingPage} />
             <Route path='/signup' component={Signup} />
             <Route path='/login' component={Login} />
-            <Route path='/children' component={Children} />
             <Route path='/family' component={Family} />
 
-            <Route path='/park' component={Park} />
-            <Route path='/activitydetail' component={ActivityDetail} />
+            <Route path='/parks/:id' component={Park} />
+            <Route path='/activitydetail/:id' component={ActivityDetail} />
             <Switch>
               <Route path='/children/:id' component={Child} />
+              <Route path='/children' component={Children} />
             </Switch>
           </main>
 
