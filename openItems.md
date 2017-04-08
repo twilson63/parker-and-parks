@@ -19,6 +19,9 @@
 
 #### Parks
   - Need stories and images for both parks.
+  
+#### Activity-detail page
+  - Can't seem to get action to append to child.activity array.
 
 
 #### Nice to Have
